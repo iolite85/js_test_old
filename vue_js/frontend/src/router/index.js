@@ -7,14 +7,10 @@ Vue.use(Router)
 
 import Users from '@/components/AllUsersPage'
 import User from '@/components/UserPage'
+import SignUp from '@/components/UserAdd'
 export default new Router({
   mode: 'history',
   routes: [
-  /*  {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },*/
     {
       path: '/',
       name: 'users',
@@ -24,6 +20,11 @@ export default new Router({
       path: '/:id',
       name: 'detail',
       component: User
+    },
+    {
+      path: '/write',
+      name: 'SignUp',
+      component: SignUp
     }
   ]
 })

@@ -7,6 +7,7 @@
         <router-link :to="{ name: 'detail', params: { id: user.id }}">더보기</router-link>
       </div>
     </div>
+    <router-link v-bind:to="{ name: 'SignUp'}">작성하기</router-link>
   </div>
 </template>
 
