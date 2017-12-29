@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var tests = require('./routes/test');
 
+var cors = require('cors');
 var app = express();
 
 // view engine setup
@@ -22,6 +23,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.all('*',function(req,res,next){
+  if (!req.get('Origin')){
+        return next();
+    }
+    res.set('Access-Control-Allow-Origin','*');
+    res.set('Access-Control-Allow-Methods','GET,POST');
+    res.set('Access-Control-Allow-Headers','X-Requested-With,Content-Type');
+    if ('OPTIONS' == req.method){
+         return res.send(200);
+    }
+    next();
+});
+
 
 app.use('/', index);
 app.use('/users', users);

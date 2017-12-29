@@ -19,27 +19,29 @@ export default {
         }
       }
     },
-  methods: {
-    signUp: function (event) {
-      this.$http.post('/api/tests', { //axios 사용
-        user: this.user
-      })
-      .then((response) => {
-        if (response.data.result === 0) {
-          //alert('Error, please, try again')
-          console.log('Error, please, try again');
-        }
-        if (response.data.result === 1) {
-          //alert('Success')
-          console.log('Success');
-          this.$router.push('/api/tests') // Login 페이지로 보내줌
-        }
-      })
-      .catch(function (error) {
-        //alert('error')
-        console.log('error');
-      })
+
+    methods: {
+      signUp: function (event) {
+        console.log(124);
+        this.$http.post('http://localhost:3000/api/tests', { //axios 사용
+          user: this.user
+        })
+        .then((response) => {
+          if (response.data.result === 0) {
+            //alert('Error, please, try again')
+            console.log('Error, please, try again');
+          }
+          if (response.data.result === 1) {
+            //alert('Success')
+            console.log('Success');
+            //this.$router.push('/api/tests') // Login 페이지로 보내줌
+          }
+        })
+        .catch(function (error) {
+          //alert('error')
+          console.log('error');
+        })
+      }
     }
-  }
 }
 </script>
