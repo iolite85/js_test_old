@@ -1,17 +1,1 @@
-[
-  {
-     "id" : 1,
-     "name" : "Dave",
-     "age"  : "<div class=\"lay_wrap ly_emsg\">\n<div class=\"ly_msgwrap\">\n<div class=\"ly_msgct\">\n<strong class=\"tit\">로그인 후 확인 가능합니다.</strong>\n</div>\n<div class=\"ly_btn_area\">\n<div class=\"btn_in_wrap\">\n<div class=\"u_td\"><button type=\"button\" class=\"u_btn btn_chk\"><span class=\"txt\">로그인 하기</span></button></div>\n</div>\n</div>\n<a href=\"#\" class=\"btn_lyclr\">레이어 닫기</a>\n</div>\n</div>"
-  },
-  {
-     "id" : 2,
-     "name" : "Dave4",
-     "age"  : 22
-  },
-  {
-     "id" : 3,
-     "name" : "Dave5",
-     "age"  : 23
-  }
-]
+[{"id":1,"name":"Dave","age":"<div class=\"lay_wrap ly_emsg\">\n<div class=\"ly_msgwrap\">\n<div class=\"ly_msgct\">\n<strong class=\"tit\">로그인 후 확인 가능합니다.</strong>\n</div>\n<div class=\"ly_btn_area\">\n<div class=\"btn_in_wrap\">\n<div class=\"u_td\"><button type=\"button\" class=\"u_btn btn_chk\"><span class=\"txt\">로그인 하기</span></button></div>\n</div>\n</div>\n<a href=\"#\" class=\"btn_lyclr\">레이어 닫기</a>\n</div>\n</div>"},{"id":2,"name":"Dave4","age":22},{"id":3,"name":"Dave5","age":23},{"id":4,"name":"asa","age":"<div>버튼</div>\n"},"id:55"]
