@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="http://image.cjmall.net/public/confirm/static/deploy/webjars/ec-static-common/dist/common-cjmall-mobile/others/9c2f7e6cc01f39ad9881f87f6142087c/css/common.cjmall.mobile.css">
 <link rel="stylesheet" type="text/css" href="http://image.cjmall.net/public/confirm/static/deploy/ec-display-cjmall/dist/page-cjmall-mobile/others/1f3fec9e84593988d99df0b2de3ab562/css/page.cjmall.mobile.recent.css">
 <link rel="stylesheet" type="text/css" href="http://image.cjmall.net/public/confirm/static/deploy/webjars/ec-static-common/dist/common-cjmall-mobile/others/9c2f7e6cc01f39ad9881f87f6142087c/css/common.cjmall.mobile.optional.css">
+
 </head>
 <body>
 <div id="wrap">
@@ -35,9 +36,9 @@
 						<button type="button" class="btn_del">전체삭제</button>
 					</div>
 				</div>
-			
+
 				<!--쇼핑히스토리 or 최근 본 상품이 있을 경우 -->
-				<div class="lately_product">
+				<div class="lately_product" id="lately_product">
 				</div>
 			</div>
 		</div>
@@ -51,8 +52,9 @@
 				</ul>
 				{{/#each}}
 			</div>
-			{{/#each}}        
+			{{/#each}}
 		</script>
+
 		<script id="recent-prd" type="text/x-handlebars-template">
 		<li>
 			<a href="#">
@@ -74,13 +76,10 @@
 	</div>
 	<!-- //container -->
 </div>
-
 <script src="js\jquery-1.11.2.min.js"></script>
 <script src="js\handlebars-v4.0.11.js"></script>
 <script src="js\underscore-min.js"></script>
 <script src="js\backbone-min.js"></script>
 <script src="js\recent.js"></script>
-
-
 </body>
 </html>
