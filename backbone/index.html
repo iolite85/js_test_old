@@ -43,19 +43,20 @@
 			</div>
 		</div>
 		<script id="recent-prd-group" type="text/x-handlebars-template">
-			{{#each groups}}
+			{{#each}}
 			<div class="item_lately">
 				<span class="cont_date2">{{viewtDate insertDate}}</span>
-				{{#each list}}
+				{{#each}}
 				<ul class="list_chu_prod">
 					{{> item}}
 				</ul>
-				{{/#each}}
+				{{/each}}
 			</div>
-			{{/#each}}
+			{{/each}}
 		</script>
 
 		<script id="recent-prd" type="text/x-handlebars-template">
+		{{#each this}}
 		<li>
 			<a href="#">
 				<span class="link_thumb">
@@ -64,13 +65,14 @@
 				<div class="info_thumb">
 					<strong class="tit_prod"><span class="link_tit">{{contentName}}</span></strong>
 					<span class="txt_price">
-						<span class="num">{{price customerPrice}}</span><span class="txt">원~</span>
+						<span class="num">{{customerPrice}}</span><span class="txt">원~</span>
 					</span>
 				</div>
 			</a>
 			<button type="button" class="btn_choice"><span class="ico_heart">쇼핑찜하기</span></button>
 			<button type="button" class="btn_del"><span class="ic2_14">삭제하기</span></button>
 		</li>
+		{{/each}}
 		</script>
 	  <!-- //content -->
 	</div>
@@ -80,6 +82,10 @@
 <script src="js\handlebars-v4.0.11.js"></script>
 <script src="js\underscore-min.js"></script>
 <script src="js\backbone-min.js"></script>
+<script type="text/javascript">
+
+</script>
+
 <script src="js\recent.js"></script>
 </body>
 </html>
