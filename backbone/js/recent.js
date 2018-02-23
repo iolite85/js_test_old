@@ -17,20 +17,17 @@
       model : history,
       url:'data.json'
   });
-  var itemList = new historyItems();
+  /*var itemList = new historyItems();
   itemList.fetch();
-  console.log(itemList);
-  itemList.bind('reset', function () { console.log(itemList + 456); });
-  /*var itemList = Backbone.View.extend({
+  console.log(itemList);*/
+  var itemList = Backbone.View.extend({
     el: $('.lately_product'),
-    initialize: function(){
-      this.render();
-    },
+    template: $("#recent-prd").html(),
     render: function(){
       var that = this;
       var items = new historyItems();
     }
-  });*/
+  });
 
 
 })(jQuery);
