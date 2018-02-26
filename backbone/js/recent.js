@@ -1,11 +1,11 @@
 (function ($) {
+
 	var history = Backbone.Model.extend();
 	var historyItems = Backbone.Collection.extend({
 		  model : history,
 		  url:'data.json'
 	});
 	var itemList = Backbone.View.extend({
-
 		el: $('.lately_product'),
 		template: Handlebars.compile($("#recent-prd-group").html()),
 		initialize: function(){
@@ -22,30 +22,27 @@
 			});
 		},
 		getGroups : function(){
-			return _.groupBy(this.collection.toJSON(), 'insertDate');
-		},
-		/*groupsRender: function(){
-			var data = this.getGroups();
-			$.each(data, function(key, value){
-				//console.log(value);
-
+			var groups = [];
+			var temp = this.collection.toJSON();
+			var groupBy = _.groupBy(temp, 'insertDate');
+			_.each(groupBy, function(list, date){
+				groups.push({date: date, list: list});
 			});
-		},*/
-		getRender : function(){
-			var tpl = $("#recent-prd").html();
-			Handlebars.registerPartial("item", tpl);
+			groups = _.sortBy(groups, function(data) {
+				return data.date*-1;
+			});
+			return groups;
 		},
 		render: function(){
-			this.getRender();
-			this.getGroups();
-			//console.log(val.length);
-			var data = this.getGroups();
-			for (key in data) {
-				console.log(data[key]);
-			}
-			this.$el.append(this.template({}));
-			console.log(data);
-			//console.log(arr);
+			var group = this.getGroups();
+			
+			//Handlebars partial Templeate
+			var tpl = $("#recent-prd").html();
+			Handlebars.registerPartial("item", tpl);
+
+
+			this.$el.append(this.template({groups : group}));
+			console.log(group);
 			return this;
 		}
 	});

@@ -43,16 +43,16 @@
 			</div>
 		</div>
 		<script id="recent-prd-group" type="text/x-handlebars-template">
-
+		{{#each groups}}
 			<div class="item_lately">
-				<span class="cont_date2">{{insertDate}}</span>
+				<span class="cont_date2">{{date}}</span>
 				<ul class="list_chu_prod">
 					{{#each list}}
 						{{> item}}
 					{{/each}}
 				</ul>
 			</div>
-			
+		{{/each}}	
 		</script>
 
 		<script id="recent-prd" type="text/x-handlebars-template">
