@@ -1,18 +1,16 @@
 (function ($) {
-	
 	var history = Backbone.Model.extend();
 	var historyItems = Backbone.Collection.extend({
 		  model : history,
 		  url:'data.json'
 	});
 	var itemList = Backbone.View.extend({
+
 		el: $('.lately_product'),
-		template: Handlebars.compile($("#recent-prd-group").html()), 
+		template: Handlebars.compile($("#recent-prd-group").html()),
 		initialize: function(){
 			var self = this;
 			this.collection = new historyItems();
-			//var groups = _.groupBy(this.collection.toJSON(), 'insertDate');
-			//console.log(groups);
 			this.collection.fetch({
 				success: function(){
 					console.log('json loaded');
@@ -26,25 +24,37 @@
 		getGroups : function(){
 			return _.groupBy(this.collection.toJSON(), 'insertDate');
 		},
+		/*groupsRender: function(){
+			var data = this.getGroups();
+			$.each(data, function(key, value){
+				//console.log(value);
+
+			});
+		},*/
 		getRender : function(){
-			var tpl = $("#recent-prd").html(); 
-			Handlebars.registerPartial("item", tpl);			
+			var tpl = $("#recent-prd").html();
+			Handlebars.registerPartial("item", tpl);
 		},
 		render: function(){
 			this.getRender();
+			this.getGroups();
+			//console.log(val.length);
 			var data = this.getGroups();
-			this.$el.append(this.template({groups: data})); 
-			//console.log(data);
+			for (key in data) {
+				console.log(data[key]);
+			}
+			this.$el.append(this.template({}));
+			console.log(data);
 			//console.log(arr);
 			return this;
 		}
 	});
-	
+
 	var items = new itemList();
-	
-	
+
+
 	/* test
-	
+
 	$.when(
 		$.ajax({
 			dataType: "json",
@@ -74,7 +84,7 @@
 		//핸들바 템플릿에 데이터를 바인딩해서 HTML을 생성, HTML을 뿌려준다.
 		$(template(json)).appendTo(".lately_product");
 	});
-	
+
 
 	var history = Backbone.Model.extend();
 	var historyItems = Backbone.Collection.extend({
