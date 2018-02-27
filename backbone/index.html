@@ -52,14 +52,19 @@
 					{{/each}}
 				</ul>
 			</div>
-		{{/each}}	
+		{{/each}}
 		</script>
 
 		<script id="recent-prd" type="text/x-handlebars-template">
 		<li>
-			<a href="#">
+			<a href="{{contentUrl}}">
 				<span class="link_thumb">
 					<img src="{{contentImgUrl}}" class="img_g" alt="{{contentName}}">
+					{{#isContentCondition}}
+					<span class="frame_g">매진</span>
+					{{else}}
+					<span class="frame_g">판매<br>종료</span>
+					{{/isContentCondition}}
 				</span>
 				<div class="info_thumb">
 					<strong class="tit_prod"><span class="link_tit">{{contentName}}</span></strong>

@@ -5,6 +5,7 @@
 		  model : history,
 		  url:'data.json'
 	});
+
 	var itemList = Backbone.View.extend({
 		el: $('.lately_product'),
 		template: Handlebars.compile($("#recent-prd-group").html()),
@@ -26,29 +27,30 @@
 			var temp = this.collection.toJSON();
 			var groupBy = _.groupBy(temp, 'insertDate');
 			_.each(groupBy, function(list, date){
-				groups.push({date: date, list: list});
+				var standard = Number(date);
+				var date = date.substring(2,4) + '.' + date.substring(4,6);
+				groups.push({standard, date, list: list});
 			});
 			groups = _.sortBy(groups, function(data) {
-				return data.date*-1;
+				return data.standard * -1;
 			});
 			return groups;
 		},
 		render: function(){
+			//Item grouping
 			var group = this.getGroups();
-			
+
 			//Handlebars partial Templeate
 			var tpl = $("#recent-prd").html();
 			Handlebars.registerPartial("item", tpl);
-
-
-			this.$el.append(this.template({groups : group}));
-			console.log(group);
+			this.$el.append(this.template({groups: group}));
+			//console.log(group);
 			return this;
 		}
 	});
 
 	var items = new itemList();
-
+	//console.log(items);
 
 	/* test
 
