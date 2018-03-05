@@ -22,7 +22,7 @@
 				}
 			});
 		},
-		getGroups : function(){
+		getGroups: function(){
 			var groups = [];
 			var temp = this.collection.toJSON();
 			var groupBy = _.groupBy(temp, 'insertDate');
@@ -32,20 +32,51 @@
 				groups.push({standard, date, list: list});
 			});
 			groups = _.sortBy(groups, function(data) {
-				return data.standard * -1;
+				return -data.standard;
 			});
 			return groups;
+		},
+		getCount: function(){
+			var count = $('.lately_product').find('.list_chu_prod li').length;
+			return count;
+		},
+		helper: function(){
+			Handlebars.registerHelper('state', function(contentCondition) {
+				if(this.contentCondition === "S"){
+					return 'sold_out';
+				}else if(this.contentCondition === "I"){
+					return 'sell_end';
+				}
+			});
+
+			Handlebars.registerHelper('isContentCondition', function(options) {
+				if(this.contentCondition === "S"){
+					return options.fn(this);
+				}else if(this.contentCondition === "I"){
+					return options.inverse(this);
+				}
+			});
 		},
 		render: function(){
 			//Item grouping
 			var group = this.getGroups();
 
+			//Handlebars Helper
+			this.helper();
+
 			//Handlebars partial Templeate
 			var tpl = $("#recent-prd").html();
 			Handlebars.registerPartial("item", tpl);
+
+			// HTML 생성
 			this.$el.append(this.template({groups: group}));
+
+			//Item Total Count
+			$('.wrap_lately .piece_total .num').text(this.getCount());
 			//console.log(group);
 			return this;
+
+
 		}
 	});
 

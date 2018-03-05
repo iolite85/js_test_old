@@ -56,7 +56,8 @@
 		</script>
 
 		<script id="recent-prd" type="text/x-handlebars-template">
-		<li>
+		{{#if contentCondition}}
+		<li class="{{state contentCondition}}">
 			<a href="{{contentUrl}}">
 				<span class="link_thumb">
 					<img src="{{contentImgUrl}}" class="img_g" alt="{{contentName}}">
@@ -76,6 +77,7 @@
 			<button type="button" class="btn_choice"><span class="ico_heart">쇼핑찜하기</span></button>
 			<button type="button" class="btn_del"><span class="ic2_14">삭제하기</span></button>
 		</li>
+		{{/if}}
 		</script>
 	  <!-- //content -->
 	</div>
