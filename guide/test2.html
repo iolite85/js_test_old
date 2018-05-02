@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>test</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Hivelab\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h2 class="mume-header" id="%EB%AA%A9%EC%B0%A8">목차</h2>
+
+<ul>
+<li><a href="#add">add</a></li>
+<li><a href="#branch">branch</a></li>
+<li><a href="#checkout">checkout</a></li>
+<li><a href="#cherry-pick">cherry-pick</a></li>
+<li><a href="#clone">clone</a></li>
+<li><a href="#commit">commit</a></li>
+<li><a href="#config">config</a></li>
+<li><a href="#diff">diff</a></li>
+<li><a href="#merge">merge</a></li>
+<li><a href="#pull">pull</a></li>
+<li><a href="#push">push</a></li>
+<li><a href="#rebase">rebase</a></li>
+<li><a href="#reflog">reflog</a></li>
+<li><a href="#reset">reset</a></li>
+<li><a href="#stash">stash</a></li>
+<li><a href="#status">status</a></li>
+</ul>
+<h2 class="mume-header" id="add">add</h2>
+
+<p><strong>파일 추가</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> add <span class="token keyword">.</span>
+$ <span class="token function">git</span> add *.jsp
+$ <span class="token function">git</span> add README.TXT
+</pre><h2 class="mume-header" id="branch">branch</h2>
+
+<p><strong>브랜치 생성</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> branch <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 현재 브랜치 기반의 신규 브랜치를 생성한다.</span>
+</pre><p><strong>브랜치 확인</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> branch <span class="token comment" spellcheck="true"># 로컬 브랜치 목록 보기</span>
+$ <span class="token function">git</span> branch -r   <span class="token comment" spellcheck="true"># 리모트 브랜치 목록 보기</span>
+</pre><p><strong>브랜치 삭제</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> branch -d <span class="token operator">&lt;</span>branch name<span class="token operator">></span>
+$ <span class="token function">git</span> branch -D <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 브랜치 강제삭제(작업 후 merge 안 한 브랜치를 삭제할 때 사용한다.)</span>
+</pre><p><strong>브랜치명 변경</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> branch -m <span class="token operator">&lt;</span>branch name<span class="token operator">></span> <span class="token operator">&lt;</span>new branch name<span class="token operator">></span>
+</pre><h2 class="mume-header" id="checkout">checkout</h2>
+
+<p><strong>브랜치 이동</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> checkout <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 만약 브랜치가 로컬에 존재하지 않고 리모트에만 존재하면 리모트 브랜치를 체크아웃한다.</span>
+</pre><p><strong>브랜치 생성하면서 체크아웃</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>branch name<span class="token operator">></span>
+</pre><p><strong>브랜치 추적</strong><br><br>
+추적 중인 브랜치를 업스트림 브랜치라고 하는데, 업스트림 브랜치가 설정되어 있으면 pull이나 push 사용 시 리모트의 저장소명과 브랜치명을 생략할 수 있다. <br></p>
+<pre class="language-bash">$ <span class="token function">git</span> checkout -t origin/<span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># git 1.6.2 버전 이상</span>
+$ <span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>branch name<span class="token operator">></span> origin/<span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 리모트 브랜치와 다른 이름으로 브랜치를 만들 때 사용한다.</span>
+</pre><ul>
+<li>해당 브랜치 이동 후 git pull / git push 실행</li>
+</ul>
+<blockquote>
+<p>ex)<br>
+git pull origin feature/MOCKUP =&gt; git pull</p>
+</blockquote>
+<p><strong>브랜치 되돌리기</strong><br><br>
+신규 생성 파일을 제외한 현재 경로의 모든 파일의 되돌린다.(commit하지 않은 작업중인 파일 대상)</p>
+<pre class="language-bash">$ <span class="token function">git</span> checkout -- <span class="token keyword">.</span>
+$ <span class="token function">git</span> checkout HEAD <span class="token keyword">.</span>  
+</pre><p><strong>파일복사</strong></p>
+<ul>
+<li>다른 브랜치에 있는 파일을 가져온다.</li>
+<li>반드시 작업하긴 전에 실행. 이 기능은 <strong>머지가 아니기 때문에</strong> 현재 브랜치의 수정 내역과는 관계 없이 <strong>해당 파일의 내용으로 변경</strong>된다.</li>
+</ul>
+<pre class="language-bash">$ <span class="token function">git</span> checkout <span class="token operator">&lt;</span>branch name<span class="token operator">></span> <span class="token operator">&lt;</span>file path<span class="token operator">></span>
+</pre><h2 class="mume-header" id="cherry-pick">cherry-pick</h2>
+
+<p>다른 브랜치에 있는 commit 하나만 리베이스</p>
+<pre class="language-bash">$ <span class="token function">git</span> cherry-pick <span class="token operator">&lt;</span>commit id<span class="token operator">></span>  <span class="token comment" spellcheck="true"># commit id를 반영하고 commit까지 실행</span>
+$ <span class="token function">git</span> cherry-pick -n <span class="token operator">&lt;</span>commit id<span class="token operator">></span>  <span class="token comment" spellcheck="true"># commit id를 반영하고 add까지만 실행, commit은 안함. 여러개의 커밋을 하나로 합쳐 반영할 때 사용한다.</span>
+</pre><blockquote>
+<p>ex)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mi>i</mi><mi>t</mi><mi>c</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>r</mi><mi>y</mi><mo>−</mo><mi>p</mi><mi>i</mi><mi>c</mi><mi>k</mi><mo>−</mo><mi>n</mi><mi>a</mi><mi>a</mi><mi>a</mi><mn>1</mn><mn>2</mn><mn>3</mn><mo>&lt;</mo><mi>b</mi><mi>r</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">git cherry-pick -n aaa123&lt;br&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">c</span><span class="mord mathit">h</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mbin">−</span><span class="mord mathit">p</span><span class="mord mathit">i</span><span class="mord mathit">c</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mbin">−</span><span class="mord mathit">n</span><span class="mord mathit">a</span><span class="mord mathit">a</span><span class="mord mathit">a</span><span class="mord mathrm">1</span><span class="mord mathrm">2</span><span class="mord mathrm">3</span><span class="mrel">&lt;</span><span class="mord mathit">b</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mrel">&gt;</span></span></span></span> git cherry-pick -n bbb123<br><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mi>i</mi><mi>t</mi><mi>c</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>r</mi><mi>y</mi><mo>−</mo><mi>p</mi><mi>i</mi><mi>c</mi><mi>k</mi><mo>−</mo><mi>n</mi><mi>c</mi><mi>c</mi><mi>c</mi><mn>1</mn><mn>2</mn><mn>3</mn><mo>&lt;</mo><mi>b</mi><mi>r</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">git cherry-pick -n ccc123&lt;br&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">c</span><span class="mord mathit">h</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mbin">−</span><span class="mord mathit">p</span><span class="mord mathit">i</span><span class="mord mathit">c</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mbin">−</span><span class="mord mathit">n</span><span class="mord mathit">c</span><span class="mord mathit">c</span><span class="mord mathit">c</span><span class="mord mathrm">1</span><span class="mord mathrm">2</span><span class="mord mathrm">3</span><span class="mrel">&lt;</span><span class="mord mathit">b</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mrel">&gt;</span></span></span></span> git commit -m &quot;cherry commit&quot;</p>
+</blockquote>
+<h2 class="mume-header" id="clone">clone</h2>
+
+<p><strong>저장소복제</strong><br><br>
+현재 경로에 로컬 저장소가 될 디렉토리를 만들고 리모트 저장소의 데이터를 모두 받아온다.</p>
+<pre class="language-bash">$ <span class="token function">git</span> clone <span class="token operator">&lt;</span>repository url<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 디렉토리명을 따로 명시하지 않으면 리모트 저장소의 이름과 동일하게 생성된다.</span>
+$ <span class="token function">git</span> clone <span class="token operator">&lt;</span>repository url<span class="token operator">></span> <span class="token operator">&lt;</span>directory name<span class="token operator">></span>
+</pre><h2 class="mume-header" id="commit">commit</h2>
+
+<pre class="language-bash">$ <span class="token function">git</span> commit -m <span class="token string">"test commit"</span>
+</pre><p><strong>자동 스테이징</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> commit -a -m <span class="token string">"test commit"</span>  <span class="token comment" spellcheck="true"># add 없이 커밋할 수 있다. 신규파일X</span>
+</pre><p><strong>마지막 커밋 수정</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> commit --amend  <span class="token comment" spellcheck="true"># staged 상태인 파일이 있으면 마지막 커밋의 파일 변경 이력에 추가, 없으면 커밋 메시지만 수정(에디터 호출)</span>
+$ <span class="token function">git</span> commit -C HEAD --amend  <span class="token comment" spellcheck="true"># 마지막 커밋을 수정, 커밋 메시지는 재사용</span>
+$ <span class="token function">git</span> commit --amend -m <span class="token string">"test commit"</span>  <span class="token comment" spellcheck="true"># 마지막 커밋의 커밋 메시지만 수정</span>
+</pre><h2 class="mume-header" id="config">config</h2>
+
+<p><strong>작업자의 이름/이메일 설정</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">"이름"</span>
+$ <span class="token function">git</span> config --global user.email <span class="token string">"이메일"</span>
+</pre><p><strong>repository 인증정보 저장</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> config --global credential.helper store  <span class="token comment" spellcheck="true"># pull / push 실행 후 id, 비밀번호 입력</span>
+</pre><p><strong>기본 에디터 설정</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> config --global core.editor 에디터
+</pre><blockquote>
+<p>ex) 에디터 notepad++ 변경하기</p>
+<p>$ git config --global core.editor &quot;'C:\Program Files\Notepad++\notepad++.exe' -m&quot;</p>
+</blockquote>
+<p><strong>설정확인</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> config --list
+$ <span class="token function">git</span> config -l
+</pre><h2 class="mume-header" id="diff">diff</h2>
+
+<p><strong>파일 변경내역 비교</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> <span class="token function">diff</span> <span class="token operator">&lt;</span>commit id<span class="token operator">></span> <span class="token operator">&lt;</span>commit id<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 두 커밋을 비교하여 변경사항 출력</span>
+$ <span class="token function">git</span> <span class="token function">diff</span> <span class="token operator">&lt;</span>branch name<span class="token operator">></span> <span class="token operator">&lt;</span>commit id<span class="token operator">></span> -- *.jsp *.jsp <span class="token operator">></span> total.diff  <span class="token comment" spellcheck="true"># 브랜치와 커밋을 비교하여 변경된 모든 jsp파일의 내용을 total.diff 파일로 생성</span>
+</pre><blockquote>
+<p>ex) develop 브랜치와 fa0a0c6을 비교하여 ..../jsp/account/join 폴더의 변경된 모든 jsp파일 내용을 total.diff 파일로 생성</p>
+<p>$ git diff develop fa0a0c6 -- ec-markup-common/src/main/resources/META-INF/resources/jsp/account/join/*.jsp ec-markup-common/src/main/resources/META-INF/resources/jsp/account/join/*.jsp &gt; total.diff</p>
+</blockquote>
+<p><a href="http://gitlab.hivelab.co.kr/kyungminyoo/ykm/blob/master/sample/total.diff">smaple diff</a></p>
+<h2 class="mume-header" id="merge">merge</h2>
+
+<p><strong>브랜치 병합</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> merge <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 현재 브랜치에 지정한 브랜치를 머지</span>
+$ <span class="token function">git</span> merge --no-ff <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 현재 브랜치에 fast-forward가 가능해도 무조건 머지 커밋을 생성하여 지정한 브랜치를 머지</span>
+</pre><h2 class="mume-header" id="pull">pull</h2>
+
+<p><strong>fetch 후 자동 머지</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> pull  <span class="token comment" spellcheck="true"># 리모트 브랜치에서 현재 브랜치로 pull. 리모트의 저장소명과 브랜치명 생략은 업스트림 브랜치가 설정되어 있을 경우에만 가능.</span>
+$ <span class="token function">git</span> pull origin <span class="token operator">&lt;</span>branch name<span class="token operator">></span>   
+</pre><h2 class="mume-header" id="push">push</h2>
+
+<p><strong>리모트 저장소에 업로드</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> push  <span class="token comment" spellcheck="true"># 리모트 브랜치에 현재 브랜치를 업로드</span>
+$ <span class="token function">git</span> push origin <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># origin에 지정한 브랜치 업로드. 리모트에 해당 브랜치가 없으면 새로 생성</span>
+</pre><p><strong>리모트 브랜치 삭제</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> push origin --delete <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># origin 저장소의 지정한 브랜치 삭제</span>
+$ <span class="token function">git</span> push origin :<span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># --delete는 :으로 대체 가능</span>
+</pre><h2 class="mume-header" id="rebase">rebase</h2>
+
+<p><strong>브랜치 머지</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> rebase <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 현재 브랜치를 지정한 브랜치로 리베이스</span>
+</pre><ul>
+<li>브랜치의 변경사항을 순서대로 다른 브랜치에 적용하며 머지한다.</li>
+<li>저장소의 커밋 로그와 이력을 한 줄로 정리한다.</li>
+</ul>
+<p><strong>대화형 리베이스</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> rebase -i HEAD~3  <span class="token comment" spellcheck="true"># 헤드부터 HEAD~3까지의 커밋을 대화형으로 수정</span>
+</pre><ul>
+<li>git 히스토리 단장 시 사용한다
+<ul>
+<li>커밋 메시지를 여러 개 수정</li>
+<li>커밋 순서 바꾸기</li>
+<li>커밋 합치기</li>
+<li>커밋 분리하기 등</li>
+</ul>
+</li>
+<li>반드시 push하지 않은 커밋을 수정할때만 사용한다.</li>
+</ul>
+<p><a href="https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0#_changing_multiple">히스토리 단장하기</a></p>
+<h2 class="mume-header" id="reflog">reflog</h2>
+
+<p>헤드 이동 이력을 출력</p>
+<pre class="language-bash">$ <span class="token function">git</span> reflog -5  <span class="token comment" spellcheck="true"># 마지막 다섯 번의 헤드 이동 이력을 역순으로 출력</span>
+
+  c93f291 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> feature/MOCKUP, origin/feature/MOCKUP<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>0<span class="token punctuation">}</span>: commit <span class="token punctuation">(</span>merge<span class="token punctuation">)</span>: Merge branch <span class="token string">'37888_module'</span> into fe
+  ture/MOCKUP
+  fc4bb0e HEAD@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>: pull: Fast-forward
+  db2f3d3 HEAD@<span class="token punctuation">{</span>2<span class="token punctuation">}</span>: checkout: moving from 37888_module to feature/MOCKUP
+  2ef62f1 <span class="token punctuation">(</span>37888_module<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>3<span class="token punctuation">}</span>: commit: <span class="token punctuation">[</span>유경민<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token comment" spellcheck="true">#37888][1차] M-web 25/27 모듈 마크업 디자인 QA</span>
+  530ef3d HEAD@<span class="token punctuation">{</span>4<span class="token punctuation">}</span>: checkout: moving from feature/MOCKUP to 37888_module
+</pre><h2 class="mume-header" id="reset">reset</h2>
+
+<p><strong>Unstaging - staged 되돌리기(스테이징 취소)</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>file name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># add로 등록한 파일을 unstaged 상태로 바꾼다.</span>
+$ <span class="token function">git</span> reset HEAD  <span class="token comment" spellcheck="true"># 파일을 따로 명시하지 않으면 모든 스테이징을 취소한다.</span>
+</pre><p><strong>커밋 되돌리기</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> reset HEAD~2  <span class="token comment" spellcheck="true"># 헤드를 2회 이전 커밋으로 돌린다.</span>
+$ <span class="token function">git</span> reset --soft HEAD^^  <span class="token comment" spellcheck="true"># 헤드만 2회 이전 커밋으로 돌린다. ~숫자는 ^개수로 대체 가능</span>
+$ <span class="token function">git</span> reset --hard <span class="token operator">&lt;</span>commit id<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 헤드를 커밋 id로 이동하고 모든 변경 사항을 버림</span>
+</pre><blockquote>
+<p><strong>option</strong></p>
+<ul>
+<li>--mixed : 명시하지 않을때의 기본값. 작업 상태는 그대로 두지만 인덱스는 리셋</li>
+<li>--soft : 모든 로컬 변경사항을 유지</li>
+<li>--hard : 모든 작업 상태 내 변경 사항을 버림</li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="stash">stash</h2>
+
+<p>커밋이나 스테이지가 아닌 별도의 공간에 변경사항을 임시 저장, 저장한 내용을 다시 불러오는 명령어.</p>
+<p><strong>스태시 생성</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> stash  <span class="token comment" spellcheck="true"># 스태시 생성. stash save와 같음</span>
+$ <span class="token function">git</span> stash save <span class="token operator">&lt;</span>stash name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 지정한 이름으로 스태시 생성</span>
+$ <span class="token function">git</span> stash -k  <span class="token comment" spellcheck="true"># --keep-index: staged 상태의 파일은 무시한다.</span>
+$ <span class="token function">git</span> stash -u  <span class="token comment" spellcheck="true"># --include-untracked: 신규 파일도 스태시로 저장</span>
+</pre><p><strong>스태시 확인</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> stash list  <span class="token comment" spellcheck="true"># 스태시 목록 확인</span>
+</pre><p><strong>스태시 적용</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> stash apply  <span class="token comment" spellcheck="true"># 마지막 스태시를 현재 브랜치에 적용</span>
+$ <span class="token function">git</span> stash apply stash@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>  <span class="token comment" spellcheck="true"># 두번째 스태시를 브랜치에 적용</span>
+$ <span class="token function">git</span> stash apply --index  <span class="token comment" spellcheck="true"># staged 상태였던 파일을 다시 staged 상태로 적용</span>
+$ <span class="token function">git</span> stash pop  <span class="token comment" spellcheck="true"># 마지막 스태시를 적용하고 목록에서 삭제</span>
+</pre><ul>
+<li>pop, apply 같은 방법으로 사용</li>
+</ul>
+<p><strong>스태시 삭제</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> stash drop  <span class="token comment" spellcheck="true"># 마지막 스태시 삭제</span>
+$ <span class="token function">git</span> stash drop stash@<span class="token punctuation">{</span>3<span class="token punctuation">}</span>  <span class="token comment" spellcheck="true"># 네 번째 스태시 삭제</span>
+$ <span class="token function">git</span> stash <span class="token function">clear</span>  <span class="token comment" spellcheck="true"># 모든 스태시 삭제</span>
+</pre><p><strong>스태시를 적용한 새 브랜치 만들기</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> stash branch <span class="token operator">&lt;</span>branch name<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 마지막 스태시를 적용한 새 브랜치 생성</span>
+$ <span class="token function">git</span> stash branch <span class="token operator">&lt;</span>branch name<span class="token operator">></span> stash@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>  <span class="token comment" spellcheck="true"># 두 번째 스태시를 적용한 새 브랜치 생성</span>
+</pre><h2 class="mume-header" id="status">status</h2>
+
+<p><strong>저장소 상태 확인</strong></p>
+<pre class="language-bash">$ <span class="token function">git</span> status
+</pre><p><strong><a href="#2">맨위로↑↑</a></strong></p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#%EB%AA%A9%EC%B0%A8">목차</a></li>
+<li><a href="#add">add</a></li>
+<li><a href="#branch">branch</a></li>
+<li><a href="#checkout">checkout</a></li>
+<li><a href="#cherry-pick">cherry-pick</a></li>
+<li><a href="#clone">clone</a></li>
+<li><a href="#commit">commit</a></li>
+<li><a href="#config">config</a></li>
+<li><a href="#diff">diff</a></li>
+<li><a href="#merge">merge</a></li>
+<li><a href="#pull">pull</a></li>
+<li><a href="#push">push</a></li>
+<li><a href="#rebase">rebase</a></li>
+<li><a href="#reflog">reflog</a></li>
+<li><a href="#reset">reset</a></li>
+<li><a href="#stash">stash</a></li>
+<li><a href="#status">status</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>

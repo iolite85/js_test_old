@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/guide.css">
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/commonmark.js"></script>
+	<script type="text/javascript">
+	var test = {
+		"menu1":[{"sub1":"장비 세팅","sub2":"UI개발 정보"}],
+		"menu2":[{"sub0":"개발환경세팅","sub1":"Atom editor 설치"}]
+	}
+
+//	function loadDoc() {
+		/*var param = document.location.href.split("=");
+		var loc = "md/"+param[1]+".md";
+
+		function getText(myUrl){
+	      var result = null;
+	      $.ajax( { url: myUrl,
+	                type: 'get',
+	                dataType: 'html',
+	                async: false,
+	                success: function(data) { result = data; }
+	              }
+	      );
+	      FileReady = true;
+	      return result;
+	  }
+		var markdown_source = getText(loc);
+
+		var commonmark = window.commonmark;
+		var writer = new commonmark.HtmlRenderer({ sourcepos: true });
+		var writerNoPos = new commonmark.HtmlRenderer({ sourcepos: false });
+		var xmlwriter = new commonmark.XmlRenderer({ sourcepos: true });
+		var reader = new commonmark.Parser();
+
+		var parsed = markdown_source;
+		var render = function() {
+			//console.log(parsed);
+	    if (parsed === undefined) {
+	      return;
+	    }
+	    var result = writer.render(parsed);
+	    var resultNoPos = writerNoPos.render(parsed)
+	    $("#preview").html(result);
+
+	  };
+
+		render();
+
+
+	//	console.log(markdown_source);
+	/*	var commonmark = window.commonmark;
+		var writer = new commonmark.HtmlRenderer({ sourcepos: true });
+		var writerNoPos = new commonmark.HtmlRenderer({ sourcepos: false });
+		var xmlwriter = new commonmark.XmlRenderer({ sourcepos: true });
+		var reader = new commonmark.Parser();
+
+		var timer;
+	  var x;
+	  var parsed;
+	  var render = function() {
+	    if (parsed === undefined) {
+	      return;
+	    }
+	    var result = writer.render(parsed);
+	    var resultNoPos = writerNoPos.render(parsed)
+	    $("#preview").html(result);
+	    $("#html").text(resultNoPos);
+	    $("#htmlarea").text(resultNoPos);
+	  };*/
+
+		/*var markdown_source = getText(loc);
+		console.log(loc);
+
+/*		var markdown_source = getText(loc);
+
+		var output = markdown.toHTML(markdown_source);
+    document.write(output);*/
+
+
+		//console.log(param[1]);
+
+		/*var xhttp = new XMLHttpRequest();
+	  xhttp.open("GET", "md/"+param[1]+".md");
+	  xhttp.send();
+		xhttp.onload = function () {
+			document.getElementById('mdtest').innerHTML = xhttp.responseText;
+		}*/
+
+//	}
+//	loadDoc();
+
+var param = document.location.href.split("=");
+var loc = "md/"+param[1]+".md";
+
+function getText(myUrl){
+		var result = null;
+		$.ajax( { url: myUrl,
+							type: 'get',
+							dataType: 'html',
+							async: false,
+							success: function(data) { result = data; }
+						}
+		);
+		FileReady = true;
+		return result;
+}
+
+//var markdown_source = getText(loc);
+
+//console.log(markdown_source);
+
+var commonmark = window.commonmark;
+var writer = new commonmark.HtmlRenderer({ sourcepos: true });
+var writerNoPos = new commonmark.HtmlRenderer({ sourcepos: false });
+var xmlwriter = new commonmark.XmlRenderer({ sourcepos: true });
+var reader = new commonmark.Parser();
+
+
+
+$(document).ready(function() {
+  //var timer;
+  //var x;
+  var parsed;
+  var render = function() {
+    if (parsed === undefined) {
+      return;
+    }
+    var result = writer.render(parsed);
+    var resultNoPos = writerNoPos.render(parsed)
+    $("#preview").html(result);
+  };
+
+	var reCon = getText(loc).replace(/..\/\img/g,"img");
+
+  var parseAndRender = function() {
+		parsed = reader.parse(reCon);
+		render();
+  };
+
+
+  parseAndRender();
+
+	//$("#preview").html(reCon);
+
+});
+	</script>
+</head>
+<body>
+
+	<div id="preview">
+  </div>
+
+</body>
+</html>
